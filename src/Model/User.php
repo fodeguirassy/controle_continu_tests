@@ -8,8 +8,8 @@
 
 namespace Model;
 
-class User {
-
+class User
+{
     public function __construct($firstname, $lastname, $email)
     {
         $this->firstname = $firstname;
@@ -38,5 +38,4 @@ class User {
     {
         return $this->email;
     }
-
 }

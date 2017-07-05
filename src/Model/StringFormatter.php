@@ -8,41 +8,42 @@
 
 namespace Model;
 
-
 class StringFormatter
 {
     private $firstString;
     private $secondString;
 
-    public function __construct($string1, $string2){
+    public function __construct($string1, $string2)
+    {
         $this->firstString = $string1;
         $this->secondString = $string2;
     }
 
-    public function concat(){
+    public function concat()
+    {
         return $this->firstString.$this->secondString;
     }
 
-    public function toCamelCase(){
+    public function toCamelCase()
+    {
         return ucfirst($this->firstString).ucfirst($this->secondString);
     }
 
-    public function prefix($toCamelCase){
-        if($toCamelCase == true){
+    public function prefix($toCamelCase)
+    {
+        if ($toCamelCase == true) {
             return $this->toCamelCase();
-        }
-        else{
+        } else {
             return $this->concat();
         }
-
     }
 
-    public function suffix($toCamelCase){
-        if($toCamelCase == true){
+    public function suffix($toCamelCase)
+    {
+        if ($toCamelCase == true) {
             return $this->firstString.ucfirst($this->secondString);
-        }else{
+        } else {
             return $this->concat();
         }
     }
-
 }
