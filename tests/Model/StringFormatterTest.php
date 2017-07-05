@@ -26,9 +26,18 @@ class StringFormatterTest extends TestCase {
 
     public function testToCamelCase(){
         $camelString = $this->stringFormatter->toCamelCase();
-        $this->assertSame("hello World", $camelString);
+        $this->assertSame("Hello World", $camelString);
     }
 
-    
 
+    public function testPrefix(){
+        $toCamelCase = false;
+        $concataned = $this->stringFormatter->prefix($toCamelCase);
+        $this->assertSame("Hello world", $concataned);
+
+        $toCamelCase = true;
+        $camelString = $this->stringFormatter->prefix($toCamelCase);
+        $this->assertSame("Hello World", $camelString);
+
+    }
 }

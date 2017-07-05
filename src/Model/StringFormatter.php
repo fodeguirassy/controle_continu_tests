@@ -24,7 +24,16 @@ class StringFormatter
     }
 
     public function toCamelCase(){
-        return lcfirst($this->firstString).ucfirst($this->secondString);
+        return ucfirst($this->firstString).ucfirst($this->secondString);
     }
 
+    public function prefix($toCamelCase){
+        if($toCamelCase == true){
+            return $this->toCamelCase();
+        }
+        else{
+            return $this->concat();
+        }
+
+    }
 }
