@@ -36,4 +36,13 @@ class StringFormatter
         }
 
     }
+
+    public function suffix($toCamelCase){
+        if($toCamelCase == true){
+            return $this->firstString.ucfirst($this->secondString);
+        }else{
+            return $this->concat();
+        }
+    }
+
 }

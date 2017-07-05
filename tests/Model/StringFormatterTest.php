@@ -40,4 +40,15 @@ class StringFormatterTest extends TestCase {
         $this->assertSame("Hello World", $camelString);
 
     }
+
+    public function testSuffix(){
+        $toCamelCase = false;
+        $concataned = $this->stringFormatter->suffix($toCamelCase);
+        $this->assertSame("Hello world", $concataned);
+
+        $toCamelCase = true;
+        $camelString = $this->stringFormatter->suffix($toCamelCase);
+        $this->assertSame("Hello World", $camelString);
+
+    }
 }
