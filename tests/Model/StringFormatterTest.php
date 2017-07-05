@@ -13,16 +13,22 @@ use Model\StringFormatter;
 class StringFormatterTest extends TestCase {
     private $stringFormatter;
 
+
     public function setUp(){
-        $this->stringFormatter = new StringFormatter();
+        $this->stringFormatter = new StringFormatter("Hello ","world");
     }
 
     public function testConcat(){
         $this->setUp();
-        $concataned = $this->stringFormatter->concat("Hello ","world");
+        $concataned = $this->stringFormatter->concat();
         $this->assertSame("Hello world", $concataned);
     }
 
+    public function testToCamelCase(){
+        $camelString = $this->stringFormatter->toCamelCase();
+        $this->assertSame("hello World", $camelString);
+    }
 
+    
 
 }

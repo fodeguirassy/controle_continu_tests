@@ -11,14 +11,20 @@ namespace Model;
 
 class StringFormatter
 {
+    private $firstString;
+    private $secondString;
 
-    public function concat($firstString, $secondString){
-        return $firstString.$secondString;
+    public function __construct($string1, $string2){
+        $this->firstString = $string1;
+        $this->secondString = $string2;
     }
 
-    public function toCamelCase($firstString, $secondString){
+    public function concat(){
+        return $this->firstString.$this->secondString;
+    }
 
-
+    public function toCamelCase(){
+        return lcfirst($this->firstString).ucfirst($this->secondString);
     }
 
 }
