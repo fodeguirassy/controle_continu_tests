@@ -15,8 +15,8 @@ class StringFormatter
 
     public function __construct($string1, $string2)
     {
-        $this->firstString = $string1;
-        $this->secondString = $string2;
+        $this->firstString = strtolower($string1);
+        $this->secondString = strtolower($string2);
     }
 
     public function concat()
@@ -26,6 +26,7 @@ class StringFormatter
 
     public function toCamelCase()
     {
+
         return ucfirst($this->firstString).ucfirst($this->secondString);
     }
 
@@ -41,7 +42,7 @@ class StringFormatter
     public function suffix($toCamelCase)
     {
         if ($toCamelCase == true) {
-            return $this->firstString.ucfirst($this->secondString);
+            return $this->toCamelCase();
         } else {
             return $this->concat();
         }

@@ -21,7 +21,7 @@ class StringFormatterTest extends TestCase {
     public function testConcat(){
         $this->setUp();
         $concataned = $this->stringFormatter->concat();
-        $this->assertSame("Hello world", $concataned);
+        $this->assertSame("hello world", $concataned);
     }
 
     public function testToCamelCase(){
@@ -33,7 +33,7 @@ class StringFormatterTest extends TestCase {
     public function testPrefix(){
         $toCamelCase = false;
         $concataned = $this->stringFormatter->prefix($toCamelCase);
-        $this->assertSame("Hello world", $concataned);
+        $this->assertSame("hello world", $concataned);
 
         $toCamelCase = true;
         $camelString = $this->stringFormatter->prefix($toCamelCase);
@@ -44,7 +44,7 @@ class StringFormatterTest extends TestCase {
     public function testSuffix(){
         $toCamelCase = false;
         $concataned = $this->stringFormatter->suffix($toCamelCase);
-        $this->assertSame("Hello world", $concataned);
+        $this->assertSame("hello world", $concataned);
 
         $toCamelCase = true;
         $camelString = $this->stringFormatter->suffix($toCamelCase);
